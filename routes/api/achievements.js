@@ -4,7 +4,9 @@ const router = express.Router()
 const Achievement = require('../../models/Achievement')
 
 router.get('/', async (req, res) => {
-    const achievements = await Achievement.find({}).sort({ date: -1 })
+    const achievements = await Achievement.find({}).sort({
+        date: -1
+    })
     res.send(achievements).status(200)
 })
 
@@ -15,18 +17,24 @@ router.post('/', async (req, res) => {
 
     try {
         const achievement = await newAchievement.save()
-        res.send(achievement).status(200)   
+        res.send(achievement).status(200)
     } catch (error) {
-        res.send({err: error.message})
+        res.send({
+            err: error.message
+        })
     }
 })
 
 router.delete('/:id', async (req, res) => {
     try {
-        const achievement = await Achievement.findOneAndDelete({_id: req.params.id})
+        const achievement = await Achievement.findOneAndDelete({
+            _id: req.params.id
+        })
         res.send(achievement).status(200)
     } catch (error) {
-        res.status(404).send({success: false})
+        res.status(404).send({
+            success: false
+        })
     }
 })
 

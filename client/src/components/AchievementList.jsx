@@ -6,7 +6,6 @@ import { connect } from 'react-redux'
 import { getAchievements, deleteAchievement } from '../actions/achievementActions'
 
 class AchievementList extends Component {
-
     componentDidMount() {
         this.props.getAchievements()
     }
@@ -28,13 +27,13 @@ class AchievementList extends Component {
                                 classNames="fade"
                             >
                                 <ListGroupItem>
-                                    <Button 
+                                    <Button
                                         className="remove-btn"
                                         color="danger"
                                         size="sm"
                                         onClick={this.onDelete.bind(this, _id)}
                                     >
-                                    &times;
+                                        &times;
                                     </Button>
                                     {name}
                                 </ListGroupItem>
@@ -45,7 +44,7 @@ class AchievementList extends Component {
             </Container>
         )
     }
-} 
+}
 
 AchievementList.propTypes = {
     achievement: PropTypes.object.isRequired,

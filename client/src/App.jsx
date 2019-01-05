@@ -1,6 +1,12 @@
-import React, { Component } from 'react';
-import { Provider } from 'react-redux'
-import { Container } from 'reactstrap'
+import React, {
+  Component
+} from 'react';
+import {
+  Provider
+} from 'react-redux'
+import {
+  Container
+} from 'reactstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css';
 import AppNavbar from './components/AppNavbar';
@@ -12,13 +18,13 @@ class App extends Component {
   render() {
     return (
       <Provider store={store}>
-        <div className="App">
+        <div className="App" >
           <AppNavbar />
           <Container>
             <AchievementModal />
             <AchievementList />
           </Container>
-       </div>
+        </div>
       </Provider>
     );
   }
